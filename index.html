@@ -26,7 +26,7 @@
 <!-- Inter alojada localmente (SIL OFL, ver fonts/OFL.txt): sin conexiones a Google Fonts -->
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}</style>
-<!-- Datos de contacto y dirección pendientes de confirmación final por CIMED. -->
+<!-- Correo de contacto pendiente de confirmación por CIMED. -->
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -242,6 +242,8 @@ img { display: block; }
 .ph.light { background: linear-gradient(165deg, var(--gris), var(--gris-2)); }
 .ph.light::before { background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(13,44,53,.03) 22px 23px); }
 .ph.light span { color: var(--petroleo); background: rgba(255,255,255,.7); }
+/* Identificación discreta de imágenes ilustrativas o conceptuales */
+.ph span.ilu-note { margin-left: auto; padding: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 0; font-size: .625rem; letter-spacing: .12em; color: rgba(255,255,255,.86); text-shadow: 0 1px 8px rgba(0,0,0,.55); }
 /* Fotografías en los espacios .ph: la imagen cubre el marco sin deformarse */
 .ph > img, .ph > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ph:has(> img)::before, .ph:has(> video)::before { content: none; }
@@ -297,6 +299,23 @@ img { display: block; }
 .t-sec .go { background: var(--petroleo); color: var(--champan-claro); }
 .t-sec h3 { padding-right: 56px; } /* espacio para la flecha .go */
 .tel { text-decoration: none; }
+/* Reseñas de Google: carrusel horizontal con datos reales (fuente autorizada) */
+.resenas-cta { display: grid; gap: 18px; justify-items: start; max-width: 32rem; }
+.resenas-carrusel { margin-top: 8px; }
+.resenas-aviso { margin: 0 0 14px; padding: 10px 14px; border-radius: var(--r-s); background: #fff1c9; color: #4a3a12; font-size: .875rem; }
+.resenas-pista { display: grid; grid-auto-flow: column; grid-auto-columns: min(86%, 380px); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 6px; scrollbar-width: none; }
+.resenas-pista::-webkit-scrollbar { display: none; }
+.resena { scroll-snap-align: start; border-radius: var(--r); background: var(--gris); padding: clamp(22px, 3vw, 32px); display: grid; gap: 14px; align-content: start; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.resena:hover { transform: translateY(-3px); box-shadow: 0 24px 40px -32px rgba(13,44,53,.45); }
+.resena .estrellas { color: var(--champan); letter-spacing: .12em; font-size: 1rem; }
+.resena blockquote { margin: 0; color: var(--texto); font-size: 1rem; line-height: 1.65; }
+.resena footer { display: grid; gap: 2px; padding: 0; background: none; font-size: .8125rem; color: var(--texto-suave); }
+.resena footer b { color: var(--texto); font-weight: 600; font-size: .9375rem; }
+.resenas-pie { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 18px; }
+.resenas-atribucion { font-size: .75rem; letter-spacing: .04em; color: var(--texto-suave); }
+.resenas-nav { display: flex; gap: 8px; }
+.resenas-btn { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--linea); background: var(--blanco); color: var(--petroleo); font-size: 1.1rem; cursor: pointer; transition: border-color .2s, background .2s; }
+.resenas-btn:hover { border-color: var(--champan); background: var(--gris); }
 .pill-prio { align-self: flex-start; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--petroleo); background: var(--champan); padding: 7px 12px; border-radius: 999px; }
 .t-row { grid-column: span 4; background: var(--blanco); border: 1px solid var(--linea); min-height: 220px; }
 .t-row h3 { font-size: var(--d-m); }
@@ -307,7 +326,7 @@ img { display: block; }
 .t-tall { grid-row: span 2; } /* bloque secundario a la altura del principal */
 .t-row .num { font-size: var(--label); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--champan); }
 @media (max-width: 960px) { .t-main, .t-sec { grid-column: 1 / -1; } .t-main { min-height: 440px; } .t-row { grid-column: span 6; } .t-row:last-child { grid-column: 1 / -1; } .t-tall { grid-row: auto; } }
-@media (max-width: 640px) { .t-row { grid-column: 1 / -1; } .t-main { min-height: 0; } }
+@media (max-width: 640px) { .t-row { grid-column: 1 / -1; min-height: 0; } .t-main { min-height: 0; } }
 
 /* Journey */
 .journey { border-radius: clamp(24px, 4vw, 48px); margin-inline: max(8px, env(safe-area-inset-left, 0px)); }
@@ -335,13 +354,6 @@ img { display: block; }
 @media (max-width: 900px) { .team { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* Reviews placeholder */
-.reviews { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 14px; }
-.score { border-radius: var(--r); background: var(--gris); padding: clamp(24px, 3vw, 40px); display: grid; gap: 14px; align-content: space-between; min-height: 260px; }
-.score .big { font-size: var(--d-xxl); font-weight: 500; letter-spacing: -.05em; line-height: 1; color: var(--texto-suave); }
-.score .big small { font-size: .35em; letter-spacing: 0; }
-.rev-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.rev { border-radius: var(--r); border: 1px dashed #cfc8bb; padding: 22px; display: grid; gap: 10px; align-content: start; color: var(--texto-suave); font-size: .9375rem; }
-.rev b { color: var(--texto); font-weight: 600; font-size: .875rem; }
 @media (max-width: 860px) { .reviews, .rev-list { grid-template-columns: 1fr; } }
 
 /* Location */
@@ -675,19 +687,16 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
         <a class="tile t-row rise" href="#contacto">
           <h3 data-seo="H3 · estética Rubí">Estética</h3>
           <p>Tratamientos de estética en las instalaciones del centro.</p>
-          <div class="tags"><span>Listado pendiente de confirmar</span></div>
           <span class="go" aria-hidden="true">↗</span>
         </a>
         <a class="tile t-row rise" href="#contacto">
           <h3 data-seo="H3 · aparatología estética Rubí">Estética avanzada y aparatología</h3>
           <p>Tratamientos con equipos de estética avanzada, aplicados por personal formado.</p>
-          <div class="tags"><span>Listado pendiente de confirmar</span></div>
           <span class="go" aria-hidden="true">↗</span>
         </a>
         <a class="tile t-row rise" href="#contacto">
           <h3 data-seo="H3 · fisioterapia Rubí">Fisioterapia</h3>
           <p>Fisioterapia en las propias instalaciones del centro.</p>
-          <div class="tags"><span>Listado pendiente de confirmar</span></div>
           <span class="go" aria-hidden="true">↗</span>
         </a>
       </div>
@@ -715,8 +724,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <span class="eyebrow">Equipo médico</span>
           <h2 data-seo="H2 · E-E-A-T · autoría médica verificable">Profesionales con nombre y apellidos</h2>
         </div>
-        <p class="muted">Cada ficha muestra el nombre y la especialidad de cada profesional. Es lo primero que comprueban los pacientes, y también Google, en una web médica.</p>
-      </div>
+              </div>
       <div class="team">
         <div class="doc rise"><div class="ph light"><img src="img/dr-carlos-jimenez-cano-399.webp" width="399" height="598" alt="Retrato del Dr. Carlos Jiménez Cano" loading="lazy" decoding="async" style="object-position: 50% 30%"></div><div class="meta"><b>Dr. Carlos Jiménez Cano</b><span>Cirugía general · Cirugía plástica</span></div></div>
         <div class="doc rise"><div class="ph light"><img src="img/dra-montserrat-garrote-640.webp" srcset="img/dra-montserrat-garrote-400.webp 400w, img/dra-montserrat-garrote-640.webp 640w" sizes="(max-width: 900px) 50vw, 300px" width="640" height="1122" alt="Retrato de la Dra. Montserrat Garrote Muñoz" loading="lazy" decoding="async" style="object-position: 50% 32%"></div><div class="meta"><b>Dra. Montserrat Garrote Muñoz</b><span>Medicina estética · Dirección médica</span></div></div>
@@ -726,18 +734,6 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     </div>
   </section>
 
-  <section class="sec" style="padding-top:0" id="opiniones">
-    <div class="wrap">
-      <div class="head"><span class="eyebrow">Opiniones</span><h2 data-seo="H2 · reseñas Google Business Profile">Lo que dicen nuestros pacientes</h2></div>
-      <div class="reviews">
-        <div class="score"><span class="eyebrow">Google · ficha del centro</span><div class="big">—<small> / 5</small></div><p class="muted">Se conectará a la valoración real de Google. Nunca se publicarán opiniones inventadas.</p></div>
-        <div class="rev-list">
-          <div class="rev"><b>Reseña real de Google</b>Espacio para una opinión verificada, con nombre y fecha tal y como aparece en Google.</div>
-          <div class="rev"><b>Reseña real de Google</b>Espacio para una segunda opinión verificada, con autorización del paciente si incluye detalles.</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="sec" style="padding-top:0" id="ubicacion">
     <div class="wrap">
@@ -746,7 +742,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <span class="eyebrow">Localización</span>
           <h2 style="font-size:var(--d-l)" data-seo="H2 · SEO local · Rubí y Vallès">Tu clínica en Rubí, a minutos de todo el Vallès</h2>
           <dl class="facts">
-            <div><dt>Dirección</dt><dd>Carrer d’Antoni de Borja, 15 · 08191 Rubí (Barcelona)<small>Pendiente de confirmación final</small></dd></div>
+            <div><dt>Dirección</dt><dd>Carrer d’Antoni de Borja, 15<small>08191 Rubí, Barcelona</small></dd></div>
             <div><dt>Teléfono</dt><dd><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a> <button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></dd></div>
             <div><dt>WhatsApp</dt><dd>+34 670 68 27 77<small>Respuesta en horario de centro</small></dd></div>
             <div><dt>Horario</dt><dd>Pendiente de confirmar</dd></div>
@@ -781,6 +777,26 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
       </div>
     </div>
   </section>
+  <section class="sec resenas" id="opiniones" aria-labelledby="resenas-titulo">
+    <div class="wrap">
+      <div class="head head-split">
+        <div class="head" style="margin:0"><span class="eyebrow">Opiniones en Google</span><h2 id="resenas-titulo" data-seo="H2 · reseñas Google Business Profile">Lo que dicen nuestros pacientes</h2></div>
+        <div class="resenas-cta">
+          <p class="muted">Las opiniones se muestran tal y como aparecen en la ficha de Institución CIMED en Google.</p>
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=CIMED%2C%20Carrer%20d%27Antoni%20de%20Borja%2015%2C%2008191%20Rub%C3%AD%2C%20Barcelona" target="_blank" rel="noopener noreferrer" aria-label="Ver todas las reseñas de CIMED en Google (se abre en una pestaña nueva)">Ver todas las reseñas en Google <span class="ar">↗</span></a>
+        </div>
+      </div>
+      <!-- Carrusel: se rellena solo con datos reales de una fuente autorizada (data-fuente). Sin datos permanece oculto. -->
+      <div class="resenas-carrusel" data-fuente="" hidden>
+        <p class="resenas-aviso" hidden>Ejemplo de diseño: estas tarjetas no son reseñas reales.</p>
+        <div class="resenas-pista" role="list" tabindex="0" aria-label="Reseñas de Google"></div>
+        <div class="resenas-pie">
+          <span class="resenas-atribucion">Reseñas publicadas en Google</span>
+          <div class="resenas-nav"><button type="button" class="resenas-btn" data-dir="-1" aria-label="Reseñas anteriores">←</button><button type="button" class="resenas-btn" data-dir="1" aria-label="Reseñas siguientes">→</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ================= CIRUGÍA ESTÉTICA ================= -->
@@ -795,9 +811,10 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto">Pedir valoración quirúrgica <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20cirug%C3%ADa%20est%C3%A9tica%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>cirujano responsable (pendiente)</b></span></div>
+        <!-- Revisión médica: quitar «hidden» cuando la Dirección Médica confirme que ha revisado este contenido. -->
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)" hidden><span class="av"></span><span>Contenido revisado por <b>Dirección Médica</b></span></div>
       </div>
-      <div class="ph"><img src="img/ilustracion-cirugia-cabecera-1536.webp" srcset="img/ilustracion-cirugia-cabecera-960.webp 960w, img/ilustracion-cirugia-cabecera-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 520px" width="1536" height="1024" alt="Imagen ilustrativa de una escena quirúrgica; no corresponde a una intervención real de CIMED" loading="lazy" decoding="async" style="object-position: 62% 45%"><span>Imagen ilustrativa</span></div>
+      <div class="ph"><img src="img/ilustracion-cirugia-cabecera-1536.webp" srcset="img/ilustracion-cirugia-cabecera-960.webp 960w, img/ilustracion-cirugia-cabecera-1536.webp 1536w" sizes="(max-width: 900px) 100vw, 520px" width="1536" height="1024" alt="Imagen ilustrativa de una escena quirúrgica; no corresponde a una intervención real de CIMED" loading="lazy" decoding="async" style="object-position: 62% 45%"><span class="ilu-note">Imagen ilustrativa</span></div>
     </div>
   </section>
 
@@ -828,7 +845,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <h2 data-seo="H2 · clúster: facial / mamaria / corporal">Intervenciones de cirugía estética</h2>
           <div class="proc">
             <article class="rise">
-              <div class="ph light"><img src="img/ilustracion-cirugia-facial-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía facial; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 30%"><span>Imagen ilustrativa</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-facial-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía facial; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 30%"></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía facial Rubí">Cirugía facial</h3>
                 <p>Intervenciones sobre rostro y cuello para armonizar rasgos o tratar signos de envejecimiento.</p>
@@ -837,7 +854,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <a class="link" href="cirugia-estetica-rubi/cirugia-facial/">Ver cirugía facial <span>→</span></a>
             </article>
             <article class="rise">
-              <div class="ph light"><img src="img/ilustracion-cirugia-mamaria-548.webp" width="548" height="677" alt="Imagen ilustrativa de cirugía mamaria; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 35%"><span>Imagen ilustrativa</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-mamaria-548.webp" width="548" height="677" alt="Imagen ilustrativa de cirugía mamaria; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 35%"></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía mamaria Rubí">Cirugía mamaria</h3>
                 <p>Intervenciones para modificar el volumen, la forma o la posición del pecho.</p>
@@ -846,7 +863,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <a class="link" href="cirugia-estetica-rubi/cirugia-mamaria/">Ver cirugía mamaria <span>→</span></a>
             </article>
             <article class="rise">
-              <div class="ph light"><img src="img/ilustracion-cirugia-corporal-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía corporal; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 55%"><span>Imagen ilustrativa</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-corporal-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía corporal; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 55%"></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía corporal Rubí">Cirugía corporal</h3>
                 <p>Intervenciones para remodelar el contorno del cuerpo cuando la dieta y el ejercicio no bastan.</p>
@@ -855,7 +872,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <a class="link" href="cirugia-estetica-rubi/cirugia-corporal/">Ver cirugía corporal <span>→</span></a>
             </article>
           </div>
-          <p class="muted" style="font-size:var(--small)">Cada intervención tendrá su propia página cuando la dirección médica confirme el listado. Los resultados varían en cada paciente.</p>
+          <p class="muted" style="font-size:var(--small)">Imágenes ilustrativas: no corresponden a intervenciones reales. Cada intervención tendrá su propia página cuando la dirección médica confirme el listado. Los resultados varían en cada paciente.</p>
         </div>
 
         <div class="block" id="c-proceso">
@@ -921,7 +938,8 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto">Pedir valoración médica <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20est%C3%A9tica%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>médico estético responsable (pendiente)</b></span></div>
+        <!-- Revisión médica: quitar «hidden» cuando la Dirección Médica confirme que ha revisado este contenido. -->
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)" hidden><span class="av"></span><span>Contenido revisado por <b>Dirección Médica</b></span></div>
       </div>
       <div class="ph ph-video" tabindex="0" role="button" aria-label="Reproducir el vídeo de presentación de las instalaciones de CIMED (sin sonido)"><video muted playsinline loop preload="none" poster="img/cimed-presentacion-poster-640.webp" width="540" height="960" aria-hidden="true"><source src="img/cimed-presentacion-540.mp4" type="video/mp4"></video></div>
     </div>
@@ -1155,7 +1173,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div><h4>Centro</h4><a href="#equipo">Equipo médico</a><a href="#ubicacion">Cómo llegar</a><a href="#preguntas">Preguntas frecuentes</a><a href="#blog">Blog</a></div>
     <!-- Enlaces legales no operativos: páginas pendientes de incorporar. -->
     <div><h4>Legal</h4><a href="#privacidad" id="privacidad" aria-disabled="true" title="Página pendiente: aún no disponible">Política de privacidad</a><a href="#cookies" aria-disabled="true" title="Página pendiente: aún no disponible">Cookies</a><a href="#aviso" aria-disabled="true" title="Página pendiente: aún no disponible">Aviso legal</a></div>
-    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Propuesta de diseño para validación</span></div>
+    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Web diseñada por J.Manar</span></div>
   </div>
 </footer>
 
@@ -1293,6 +1311,35 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
 
   // Enlaces legales pendientes: no navegan hasta que existan las páginas definitivas.
   document.querySelectorAll('a[aria-disabled="true"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+
+  // Reseñas de Google: el carrusel solo se muestra con datos reales de la fuente configurada en data-fuente
+  // (JSON: { reviews: [{ author, rating, text, date }] }). Para revisar el diseño en local: ?demo-resenas.
+  const carrusel = document.querySelector('.resenas-carrusel');
+  if (carrusel) {
+    const demo = new URLSearchParams(location.search).has('demo-resenas');
+    const fuente = carrusel.dataset.fuente || (demo ? 'demos/resenas-ejemplo.json' : '');
+    const pista = carrusel.querySelector('.resenas-pista');
+    if (fuente) fetch(fuente).then(r => r.ok ? r.json() : null).then(d => {
+      const lista = d && Array.isArray(d.reviews) ? d.reviews.filter(x => x && x.text) : [];
+      if (!lista.length) return;
+      lista.forEach(x => {
+        const art = document.createElement('article'); art.className = 'resena'; art.setAttribute('role', 'listitem');
+        const est = document.createElement('div'); est.className = 'estrellas';
+        const n = Math.max(0, Math.min(5, Math.round(+x.rating || 0)));
+        est.textContent = '★'.repeat(n) + '☆'.repeat(5 - n); est.setAttribute('aria-label', n + ' de 5 estrellas');
+        const q = document.createElement('blockquote'); q.textContent = x.text;
+        const f = document.createElement('footer'); const b = document.createElement('b'); b.textContent = x.author || 'Usuario de Google';
+        const dt = document.createElement('span'); dt.textContent = x.date || '';
+        f.append(b, dt); art.append(est, q, f); pista.append(art);
+      });
+      carrusel.querySelector('.resenas-aviso').hidden = !demo;
+      carrusel.hidden = false;
+    }).catch(() => {});
+    carrusel.querySelectorAll('.resenas-btn').forEach(btn => btn.addEventListener('click', () => {
+      const card = pista.querySelector('.resena');
+      pista.scrollBy({ left: (+btn.dataset.dir) * (card ? card.offsetWidth + 14 : 300), behavior: 'smooth' });
+    }));
+  }
 
   // Vídeo de cabecera: imagen fija al cargar; sin sonido. Ratón: se reproduce al pasar por encima y se reinicia al salir.
   // Táctil y teclado: tocar o pulsar Intro/Espacio reproduce o pausa. Con movimiento reducido no se reproduce solo.

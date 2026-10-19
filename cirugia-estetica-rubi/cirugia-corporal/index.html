@@ -150,6 +150,8 @@ img { display: block; }
 .ph.light { background: linear-gradient(165deg, var(--gris), var(--gris-2)); }
 .ph.light::before { background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(13,44,53,.03) 22px 23px); }
 .ph.light span { color: var(--petroleo); background: rgba(255,255,255,.7); }
+/* Identificación discreta de imágenes ilustrativas o conceptuales */
+.ph span.ilu-note { margin-left: auto; padding: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 0; font-size: .625rem; letter-spacing: .12em; color: rgba(255,255,255,.86); text-shadow: 0 1px 8px rgba(0,0,0,.55); }
 /* Fotografías en los espacios .ph: la imagen cubre el marco sin deformarse */
 .ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ph:has(> img)::before { content: none; }
@@ -557,9 +559,10 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto" data-pref="Cirugía estética corporal">Pedir valoración corporal <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20cirug%C3%ADa%20corporal%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>cirujano responsable (pendiente)</b></span></div>
+        <!-- Revisión médica: quitar «hidden» cuando la Dirección Médica confirme que ha revisado este contenido. -->
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)" hidden><span class="av"></span><span>Contenido revisado por <b>Dirección Médica</b></span></div>
       </div>
-      <div class="ph"><img src="../../img/ilustracion-cirugia-corporal-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía corporal; no corresponde a una intervención real" fetchpriority="high" decoding="async" style="object-position: 50% 40%"><span>Imagen ilustrativa</span></div>
+      <div class="ph"><img src="../../img/ilustracion-cirugia-corporal-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía corporal; no corresponde a una intervención real" fetchpriority="high" decoding="async" style="object-position: 50% 40%"><span class="ilu-note">Imagen ilustrativa</span></div>
     </div>
   </section>
 
@@ -756,7 +759,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div><h4>Centro</h4><a href="../../#equipo">Equipo médico</a><a href="../../#ubicacion">Cómo llegar</a><a href="../../#preguntas">Preguntas frecuentes</a><a href="../../#blog">Blog</a></div>
     <!-- Enlaces legales no operativos: páginas pendientes de incorporar. -->
     <div><h4>Legal</h4><a href="#privacidad" id="privacidad" aria-disabled="true" title="Página pendiente: aún no disponible">Política de privacidad</a><a href="#cookies" aria-disabled="true" title="Página pendiente: aún no disponible">Cookies</a><a href="#aviso" aria-disabled="true" title="Página pendiente: aún no disponible">Aviso legal</a></div>
-    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Propuesta de diseño para validación</span></div>
+    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Web diseñada por J.Manar</span></div>
   </div>
 </footer>
 <section class="seo-panel" id="seo-panel" hidden aria-label="Notas SEO para el proveedor">

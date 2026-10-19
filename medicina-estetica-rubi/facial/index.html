@@ -150,6 +150,8 @@ img { display: block; }
 .ph.light { background: linear-gradient(165deg, var(--gris), var(--gris-2)); }
 .ph.light::before { background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(13,44,53,.03) 22px 23px); }
 .ph.light span { color: var(--petroleo); background: rgba(255,255,255,.7); }
+/* Identificación discreta de imágenes ilustrativas o conceptuales */
+.ph span.ilu-note { margin-left: auto; padding: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: 0; font-size: .625rem; letter-spacing: .12em; color: rgba(255,255,255,.86); text-shadow: 0 1px 8px rgba(0,0,0,.55); }
 /* Fotografías en los espacios .ph: la imagen cubre el marco sin deformarse */
 .ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ph:has(> img)::before { content: none; }
@@ -504,6 +506,9 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
 .seo-grid ul { margin: 0; padding-left: 16px; display: grid; gap: 6px; }
 .seo-grid code { font-size: .8125rem; color: var(--champan-claro); word-break: break-word; }
 @media (max-width: 860px) { .seo-grid { grid-template-columns: 1fr; } }
+
+/* Medicina estética facial: fotografía de cabecera; en pantallas estrechas el marco es más alto para no cortar los rostros */
+@media (max-width: 900px) { .p-hero .ph.ph-mef { aspect-ratio: 1; } }
 </style>
 </head>
 <body>
@@ -557,9 +562,10 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto" data-pref="Medicina estética facial">Pedir valoración facial <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20est%C3%A9tica%20facial%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>médico estético responsable (pendiente)</b></span></div>
+        <!-- Revisión médica: quitar «hidden» cuando la Dirección Médica confirme que ha revisado este contenido. -->
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)" hidden><span class="av"></span><span>Contenido revisado por <b>Dirección Médica</b></span></div>
       </div>
-      <div class="ph"><span>Foto real · cabina facial</span></div>
+      <div class="ph ph-mef"><img src="../../img/medicina-facial-cabecera-960.webp" srcset="../../img/medicina-facial-cabecera-640.webp 640w, ../../img/medicina-facial-cabecera-960.webp 960w, ../../img/medicina-facial-cabecera-1536.webp 1536w" sizes="(max-width: 900px) 92vw, 46vw" width="1536" height="1024" alt="Imagen ilustrativa: dos mujeres de distintas edades de perfil, con la piel cuidada" fetchpriority="high" decoding="async" style="object-position: 62% 40%"><span class="ilu-note">Imagen ilustrativa</span></div>
     </div>
   </section>
 
@@ -758,7 +764,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div><h4>Centro</h4><a href="../../#equipo">Equipo médico</a><a href="../../#ubicacion">Cómo llegar</a><a href="../../#preguntas">Preguntas frecuentes</a><a href="../../#blog">Blog</a></div>
     <!-- Enlaces legales no operativos: páginas pendientes de incorporar. -->
     <div><h4>Legal</h4><a href="#privacidad" id="privacidad" aria-disabled="true" title="Página pendiente: aún no disponible">Política de privacidad</a><a href="#cookies" aria-disabled="true" title="Página pendiente: aún no disponible">Cookies</a><a href="#aviso" aria-disabled="true" title="Página pendiente: aún no disponible">Aviso legal</a></div>
-    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Propuesta de diseño para validación</span></div>
+    <div class="legal"><span>© 2026 CIMED · Centro médico multidisciplinar · Rubí (Barcelona)</span><span>Web diseñada por J.Manar</span></div>
   </div>
 </footer>
 <section class="seo-panel" id="seo-panel" hidden aria-label="Notas SEO para el proveedor">

@@ -1,4 +1,4 @@
-# CIMED WEB — V2.4 pruebas
+# CIMED WEB — V2.5 pruebas
 
 Proyecto independiente de Café Aurora.
 
@@ -81,3 +81,9 @@ La documentación interna (informe V2.4, archivos de producción, redirecciones 
 - Borradores legales en `/aviso-legal/`, `/politica-de-privacidad/` y `/politica-de-cookies/` (noindex, pendientes de revisión).
 - Archivos de producción (robots.txt, sitemap.xml, redirecciones 301) preparados en local, sin activar.
 
+## Cambios V2.5
+La documentación interna (informe V2.5, requisitos de la integración de reseñas y datos de ejemplo) se conserva fuera del repositorio público, en la rama local `v2.5`.
+- Limpieza de textos internos; pie «Web diseñada por J.Manar»; nota de revisión médica preparada (oculta).
+- Medicina estética facial: imagen ilustrativa en la cabecera. Medicina regenerativa: composición inmersiva con imagen conceptual.
+- Cirugía facial: el rostro 3D de la primera propuesta se retiró tras la revisión visual.
+- Reseñas de Google: sección con enlace a la ficha de CIMED; carrusel preparado para datos reales, oculto mientras no haya una fuente autorizada.
