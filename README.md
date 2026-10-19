@@ -68,6 +68,6 @@ Espacios que siguen pendientes de foto: ficha del cirujano (Equipo médico), cab
 - Cabecera de Cirugía estética: `ilustracion-cirugia-cabecera` (generada), con aviso «Imagen ilustrativa».
 - «Tu cirujano» y ficha del equipo: retrato `dr-carlos-jimenez-cano` (Dr. Carlos Jiménez Cano · Cirugía general · Cirugía plástica).
 - Fichas del equipo sin número de colegiado (decisión de dirección, pendiente de comprobación normativa).
-- Cabecera de Medicina estética: `instalaciones-pasillo` (pasillo y sala de tratamiento).
+- Cabecera de Medicina estética: `instalaciones-pasillo` (pasillo y sala de tratamiento), restaurada temporalmente. **Pendiente:** sustituirla por el vídeo de presentación de la clínica (Instagram DecclvBRyqU) cuando se facilite el archivo. El código de reproducción (clase `.ph-video`: imagen fija, ratón, táctil, teclado y movimiento reducido) ya está preparado.
 - Ya no se muestran `quirofano-detalle` ni `quirofano-escena` (se conservan en `img/`).
 - **Pendiente de publicación:** foto de la sala de quirófano (`Cimed-Web/pendientes-publicacion/quirofano-sala-505.webp`, fuera del repositorio) hasta confirmar procedencia y autorización.

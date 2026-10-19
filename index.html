@@ -169,8 +169,9 @@ img { display: block; }
 .ph.light::before { background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(13,44,53,.03) 22px 23px); }
 .ph.light span { color: var(--petroleo); background: rgba(255,255,255,.7); }
 /* Fotografías en los espacios .ph: la imagen cubre el marco sin deformarse */
-.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.ph:has(> img)::before { content: none; }
+.ph > img, .ph > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph:has(> img)::before, .ph:has(> video)::before { content: none; }
+.ph-video { cursor: pointer; }
 .hero-media .ph:first-child { aspect-ratio: 4 / 5; grid-row: span 2; }
 .hero-media .ph:nth-child(2) { aspect-ratio: 1; }
 .chip-card { border-radius: var(--r); background: rgba(255,255,255,.06); border: 1px solid rgba(238,242,242,.12); padding: 18px; display: grid; gap: 6px; align-content: end; backdrop-filter: blur(10px); }
@@ -1202,6 +1203,21 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
 
   // Enlaces legales pendientes: no navegan hasta que existan las páginas definitivas.
   document.querySelectorAll('a[aria-disabled="true"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+
+  // Vídeo de cabecera: imagen fija al cargar; sin sonido. Ratón: se reproduce al pasar por encima y se reinicia al salir.
+  // Táctil y teclado: tocar o pulsar Intro/Espacio reproduce o pausa. Con movimiento reducido no se reproduce solo.
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('.ph-video').forEach(box => {
+    const v = box.querySelector('video');
+    const play = () => { v.muted = true; v.play().catch(() => {}); };
+    const reset = () => { v.pause(); v.load(); }; // vuelve al inicio y a la imagen fija (póster)
+    const toggle = () => (v.paused ? play() : v.pause());
+    box.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse' && !reduceMotion.matches) play(); });
+    box.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') reset(); });
+    box.addEventListener('click', e => { if (e.pointerType !== 'mouse') toggle(); });
+    box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    box.addEventListener('blur', reset);
+  });
 })();
 </script>
 
