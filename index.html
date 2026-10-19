@@ -217,6 +217,8 @@ img { display: block; }
 .t-sec p { color: var(--texto-suave); }
 .t-sec .tags span { background: var(--blanco); border: 1px solid var(--linea); }
 .t-sec .go { background: var(--petroleo); color: var(--champan-claro); }
+.t-sec h3 { padding-right: 56px; } /* espacio para la flecha .go */
+.tel { text-decoration: none; }
 .pill-prio { align-self: flex-start; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--petroleo); background: var(--champan); padding: 7px 12px; border-radius: 999px; }
 .t-row { grid-column: span 4; background: var(--blanco); border: 1px solid var(--linea); min-height: 220px; }
 .t-row h3 { font-size: var(--d-m); }
@@ -636,7 +638,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <h2 style="font-size:var(--d-l)" data-seo="H2 · SEO local · Rubí y Vallès">Tu clínica en Rubí, a minutos de todo el Vallès</h2>
           <dl class="facts">
             <div><dt>Dirección</dt><dd>Rubí (Barcelona)<small>Calle y número pendientes de confirmar</small></dd></div>
-            <div><dt>Teléfono</dt><dd>+34 670 68 27 77 <button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></dd></div>
+            <div><dt>Teléfono</dt><dd><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a> <button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></dd></div>
             <div><dt>WhatsApp</dt><dd>+34 670 68 27 77<small>Respuesta en horario de centro</small></dd></div>
             <div><dt>Horario</dt><dd>Pendiente de confirmar</dd></div>
           </dl>
@@ -1000,13 +1002,13 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
       <p class="lead">Cuéntanos qué necesitas y te llamamos para orientarte y darte cita.</p>
       <div class="channels">
         <a class="channel" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20CIMED" target="_blank" rel="noopener"><div><b>WhatsApp</b><small>Mensaje editable antes de enviar</small></div><span>↗</span></a>
-        <div class="channel"><div><b>+34 670 68 27 77</b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
+        <div class="channel"><div><b><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a></b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
       </div>
     </div>
     <form id="form" novalidate aria-labelledby="ftitle">
       <h3 id="ftitle">Solicita información</h3>
       <!-- VERSIÓN DE PRUEBAS: formulario desactivado. No envía, no recoge ni almacena datos. -->
-      <div class="status bad" id="form-aviso">Formulario no operativo todavía: esta es una versión de pruebas y no envía ni guarda ningún dato. Para contactar con el centro, usa WhatsApp o llama al +34&nbsp;670&nbsp;68&nbsp;27&nbsp;77.</div>
+      <div class="status bad" id="form-aviso">Formulario no operativo todavía: esta es una versión de pruebas y no envía ni guarda ningún dato. Para contactar con el centro, usa WhatsApp o llama al <a href="tel:+34670682777">+34&nbsp;670&nbsp;68&nbsp;27&nbsp;77</a>.</div>
       <div class="row">
         <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required disabled><span class="err" hidden>Escribe tu nombre.</span></div>
         <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Número de contacto" required disabled><span class="err" hidden>Escribe un teléfono de 9 cifras o más.</span></div>
@@ -1095,6 +1097,12 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
   };
   addEventListener('hashchange', route);
   route();
+  // Enlace a la vista actual: el hash no cambia y no salta hashchange, así que volvemos al inicio de la vista.
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    const h = a ? a.getAttribute('href').slice(1) : '';
+    if (h && '#' + h === location.hash && (h === 'inicio' || pages.some(pg => pg.root === h))) { e.preventDefault(); window.scrollTo({ top: 0 }); }
+  });
 
   const burger = document.getElementById('burger');
   const mnav = document.getElementById('mnav');
@@ -1104,7 +1112,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
-  mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.hidden = true; burger.setAttribute('aria-expanded', 'false'); } });
+  mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.hidden = true; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Abrir menú'); } });
 
   // TOC active state
   const tocLinks = [...document.querySelectorAll('.toc a[href^="#c-"], .toc a[href^="#m-"], .toc a[href^="#b-"]')];

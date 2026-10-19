@@ -184,6 +184,8 @@ img { display: block; }
 .t-sec p { color: var(--texto-suave); }
 .t-sec .tags span { background: var(--blanco); border: 1px solid var(--linea); }
 .t-sec .go { background: var(--petroleo); color: var(--champan-claro); }
+.t-sec h3 { padding-right: 56px; } /* espacio para la flecha .go */
+.tel { text-decoration: none; }
 .pill-prio { align-self: flex-start; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--petroleo); background: var(--champan); padding: 7px 12px; border-radius: 999px; }
 .t-row { grid-column: span 4; background: var(--blanco); border: 1px solid var(--linea); min-height: 220px; }
 .t-row h3 { font-size: var(--d-m); }
@@ -739,14 +741,14 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
       <div class="channels">
         <!-- Reserva online (Doctoralia) retirada provisionalmente: WhatsApp es el canal de contacto. -->
         <a class="channel" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20regenerativa%20en%20CIMED" target="_blank" rel="noopener"><div><b>WhatsApp</b><small>Mensaje editable antes de enviar</small></div><span>↗</span></a>
-        <div class="channel"><div><b>+34 670 68 27 77</b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
+        <div class="channel"><div><b><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a></b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
         <div class="channel"><div><b>info@institucioncimed.com</b><small>Correo del centro · pendiente de validación</small></div><button class="copy" type="button" data-copy="info@institucioncimed.com">Copiar</button></div>
       </div>
     </div>
     <form id="form" novalidate aria-labelledby="ftitle">
       <h3 id="ftitle">Solicita información</h3>
       <!-- VERSIÓN DE PRUEBAS: formulario desactivado. No envía, no recoge ni almacena datos. -->
-      <div class="status bad" id="form-aviso">Formulario no operativo todavía: esta es una versión de pruebas y no envía ni guarda ningún dato. Para contactar con el centro, usa WhatsApp o llama al +34&nbsp;670&nbsp;68&nbsp;27&nbsp;77.</div>
+      <div class="status bad" id="form-aviso">Formulario no operativo todavía: esta es una versión de pruebas y no envía ni guarda ningún dato. Para contactar con el centro, usa WhatsApp o llama al <a href="tel:+34670682777">+34&nbsp;670&nbsp;68&nbsp;27&nbsp;77</a>.</div>
       <div class="row">
         <div class="field"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required disabled><span class="err" hidden>Escribe tu nombre.</span></div>
         <div class="field"><label for="f-tel">Teléfono</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Número de contacto" required disabled><span class="err" hidden>Escribe un teléfono de 9 cifras o más.</span></div>
@@ -775,7 +777,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div><h4>Centro</h4><a href="../#equipo">Equipo médico</a><a href="../#ubicacion">Cómo llegar</a><a href="../#preguntas">Preguntas frecuentes</a><a href="../#blog">Blog</a></div>
     <!-- Enlaces legales no operativos: páginas pendientes de incorporar. -->
     <div><h4>Legal</h4><a href="#privacidad" id="privacidad" aria-disabled="true" title="Página pendiente: aún no disponible">Política de privacidad</a><a href="#cookies" aria-disabled="true" title="Página pendiente: aún no disponible">Cookies</a><a href="#aviso" aria-disabled="true" title="Página pendiente: aún no disponible">Aviso legal</a></div>
-    <div class="legal"><span>© 2026 CIMED · Carrer d’Antoni de Borja, 15 · 08191 Rubí, Barcelona · info@institucioncimed.com (dirección y correo pendientes de validación) · 670 68 27 77</span><span>Propuesta de diseño para validación</span></div>
+    <div class="legal"><span>© 2026 CIMED · Carrer d’Antoni de Borja, 15 · 08191 Rubí, Barcelona · info@institucioncimed.com (dirección y correo pendientes de validación) · <a class="tel" href="tel:+34670682777">670 68 27 77</a></span><span>Propuesta de diseño para validación</span></div>
   </div>
 </footer>
 <section class="seo-panel" id="seo-panel" hidden aria-label="Notas SEO para el proveedor">
@@ -810,7 +812,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
-  mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.hidden = true; burger.setAttribute('aria-expanded', 'false'); } });
+  mnav.addEventListener('click', e => { if (e.target.closest('a')) { mnav.hidden = true; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Abrir menú'); } });
 
   // TOC active state
   document.querySelectorAll('[data-pref]').forEach(a => a.addEventListener('click', () => { const s = document.getElementById('f-serv'); if (s) s.value = a.dataset.pref; }));
