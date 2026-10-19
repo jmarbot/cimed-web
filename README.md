@@ -1,4 +1,4 @@
-# CIMED WEB — V2.3 pruebas
+# CIMED WEB — V2.4 pruebas
 
 Proyecto independiente de Café Aurora.
 
@@ -68,6 +68,16 @@ Espacios que siguen pendientes de foto: ficha del cirujano (Equipo médico), cab
 - Cabecera de Cirugía estética: `ilustracion-cirugia-cabecera` (generada), con aviso «Imagen ilustrativa».
 - «Tu cirujano» y ficha del equipo: retrato `dr-carlos-jimenez-cano` (Dr. Carlos Jiménez Cano · Cirugía general · Cirugía plástica).
 - Fichas del equipo sin número de colegiado (decisión de dirección, pendiente de comprobación normativa).
-- Cabecera de Medicina estética: `instalaciones-pasillo` (pasillo y sala de tratamiento), restaurada temporalmente. **Pendiente:** sustituirla por el vídeo de presentación de la clínica (Instagram DecclvBRyqU) cuando se facilite el archivo. El código de reproducción (clase `.ph-video`: imagen fija, ratón, táctil, teclado y movimiento reducido) ya está preparado.
+- Cabecera de Medicina estética: vídeo de presentación de la clínica (ver V2.4).
 - Ya no se muestran `quirofano-detalle` ni `quirofano-escena` (se conservan en `img/`).
-- **Pendiente de publicación:** foto de la sala de quirófano (`Cimed-Web/pendientes-publicacion/quirofano-sala-505.webp`, fuera del repositorio) hasta confirmar procedencia y autorización.
+- **Pendiente de publicación:** foto de la sala de quirófano (fuera del repositorio) hasta confirmar procedencia y autorización.
+
+## Cambios V2.4
+La documentación interna (informe V2.4, archivos de producción, redirecciones y herramienta de publicación) se conserva fuera del repositorio público, en la rama local `v2.4`.
+- Google Maps abre la ficha de CIMED (Carrer d'Antoni de Borja, 15), no el centro de Rubí.
+- Cabecera de Medicina estética: vídeo de presentación (`img/cimed-presentacion-540.mp4`, sin audio, 6 MB, `preload="none"`; póster `img/cimed-presentacion-poster-640.webp`).
+- SEO: títulos y descripciones únicos, canonical, Open Graph y Twitter (`img/og-cimed-1200x630.jpg`), JSON-LD de la portada (MedicalClinic, WebSite, WebPage).
+- Fuente Inter alojada en `fonts/` (licencia OFL): sin conexiones a Google Fonts.
+- Borradores legales en `/aviso-legal/`, `/politica-de-privacidad/` y `/politica-de-cookies/` (noindex, pendientes de revisión).
+- Archivos de producción (robots.txt, sitemap.xml, redirecciones 301) preparados en local, sin activar.
+
