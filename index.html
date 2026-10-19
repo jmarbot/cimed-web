@@ -17,7 +17,7 @@
   "@graph": [
     {
       "@type": "MedicalClinic",
-      "@id": "https://cimed.example/#clinica",
+      "@id": "https://jmarbot.github.io/cimed-web/#clinica",
       "name": "CIMED",
       "slogan": "Te acompañamos antes, durante y después",
       "description": "Centro médico multidisciplinar en Rubí especializado en cirugía estética, medicina estética y especialidades médicas.",
@@ -32,13 +32,13 @@
       "about": { "@type": "MedicalSpecialty", "name": "Cirugía plástica, estética y reparadora" },
       "audience": { "@type": "PeopleAudience", "geographicArea": "Vallès Occidental" },
       "reviewedBy": { "@type": "Physician", "name": "Pendiente: cirujano responsable" },
-      "isPartOf": { "@id": "https://cimed.example/#clinica" }
+      "isPartOf": { "@id": "https://jmarbot.github.io/cimed-web/#clinica" }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cimed.example/" },
-        { "@type": "ListItem", "position": 2, "name": "Cirugía estética en Rubí", "item": "https://cimed.example/cirugia-estetica-rubi/" }
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://jmarbot.github.io/cimed-web/" },
+        { "@type": "ListItem", "position": 2, "name": "Cirugía estética en Rubí", "item": "https://jmarbot.github.io/cimed-web/#cirugia-estetica" }
       ]
     },
     {
@@ -684,7 +684,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto">Pedir valoración quirúrgica <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20cirug%C3%ADa%20est%C3%A9tica%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>cirujano responsable (pendiente)</b> · Actualizado en octubre de 2026</span></div>
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>cirujano responsable (pendiente)</b></span></div>
       </div>
       <div class="ph"><span>Foto real · quirófano o consulta</span></div>
     </div>
@@ -723,7 +723,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
                 <p>Intervenciones sobre rostro y cuello para armonizar rasgos o tratar signos de envejecimiento.</p>
                 <dl><div><dt>Anestesia</dt><dd>Según técnica</dd></div><div><dt>Recuperación</dt><dd>La indica el cirujano</dd></div></dl>
               </div>
-              <a class="link" href="#contacto">Ver cirugía facial <span>→</span></a>
+              <a class="link" href="cirugia-estetica-rubi/cirugia-facial/">Ver cirugía facial <span>→</span></a>
             </article>
             <article class="rise">
               <div class="ph light"><span>Foto real autorizada</span></div>
@@ -732,7 +732,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
                 <p>Intervenciones para modificar el volumen, la forma o la posición del pecho.</p>
                 <dl><div><dt>Anestesia</dt><dd>Según técnica</dd></div><div><dt>Recuperación</dt><dd>La indica el cirujano</dd></div></dl>
               </div>
-              <a class="link" href="#contacto">Ver cirugía mamaria <span>→</span></a>
+              <a class="link" href="cirugia-estetica-rubi/cirugia-mamaria/">Ver cirugía mamaria <span>→</span></a>
             </article>
             <article class="rise">
               <div class="ph light"><span>Foto real autorizada</span></div>
@@ -741,7 +741,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
                 <p>Intervenciones para remodelar el contorno del cuerpo cuando la dieta y el ejercicio no bastan.</p>
                 <dl><div><dt>Anestesia</dt><dd>Según técnica</dd></div><div><dt>Recuperación</dt><dd>La indica el cirujano</dd></div></dl>
               </div>
-              <a class="link" href="#contacto">Ver cirugía corporal <span>→</span></a>
+              <a class="link" href="cirugia-estetica-rubi/cirugia-corporal/">Ver cirugía corporal <span>→</span></a>
             </article>
           </div>
           <p class="muted" style="font-size:var(--small)">Cada intervención tendrá su propia página cuando la dirección médica confirme el listado. Los resultados varían en cada paciente.</p>
@@ -810,7 +810,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <a class="btn btn-gold" href="#contacto">Pedir valoración médica <span class="ar">↗</span></a>
           <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20est%C3%A9tica%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
-        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>médico estético responsable (pendiente)</b> · Actualizado en octubre de 2026</span></div>
+        <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>médico estético responsable (pendiente)</b></span></div>
       </div>
       <div class="ph"><span>Foto real · cabina de tratamiento</span></div>
     </div>
@@ -861,6 +861,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <ul><li>Listado de equipos pendiente de confirmar</li></ul>
             </div>
           </div>
+          <p><a href="medicina-estetica-rubi/facial/" style="font-weight:600;color:var(--petroleo)">Ver medicina estética facial →</a> &nbsp;·&nbsp; <a href="medicina-regenerativa-rubi/" style="font-weight:600;color:var(--petroleo)">Ver medicina regenerativa →</a></p>
           <p class="muted" style="font-size:var(--small)">Cada tratamiento tendrá su propia página cuando la dirección médica confirme el listado. Los resultados varían en cada paciente.</p>
         </div>
 
