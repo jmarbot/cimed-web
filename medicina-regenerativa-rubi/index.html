@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <title>Medicina Regenerativa CIMED</title>
-<meta name="description" content="Medicina regenerativa en Rubí (Barcelona): plasma rico en plaquetas facial y capilar, bioestimuladores de colágeno y revitalización de la piel. Valoración médica en CIMED.">
+<meta name="description" content="Medicina regenerativa en Rubí (Barcelona): plasma rico en plaquetas facial y capilar, bioestimuladores de colágeno y revitalización de la piel. Valoración médica y reserva online en CIMED.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -398,6 +398,16 @@ footer a:hover { color: var(--champan); }
 .area ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: .9375rem; color: var(--texto); }
 .area li::marker { color: var(--champan); }
 @media (max-width: 900px) { .areas3 { grid-template-columns: 1fr; } }
+/* Tarjetas de tratamiento enlazadas: toda la superficie es el enlace */
+.areas4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .areas4 { grid-template-columns: 1fr; } }
+a.area { text-decoration: none; color: inherit; transition: translate .35s var(--ease), box-shadow .35s var(--ease); }
+a.area:hover { translate: 0 -4px; box-shadow: 0 30px 50px -36px rgba(13,44,53,.5); }
+a.area .go { justify-self: end; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--petroleo); color: var(--champan-claro); transition: transform .35s var(--ease); }
+a.area:first-child .go { background: var(--champan); color: var(--petroleo); }
+a.area:hover .go { transform: rotate(-45deg); }
+.proc article { position: relative; }
+.proc .link::after { content: ""; position: absolute; inset: 0; }
 
 /* Blog article */
 .post-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 28px; font-size: .875rem; color: var(--inv-suave); }
@@ -553,7 +563,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
         <p class="intro">Tratamientos que estimulan la capacidad natural de tu piel para renovarse, a partir de tu propio plasma o de bioestimuladores. Resultados progresivos y naturales, siempre tras una valoración médica.</p>
         <div class="hero-cta">
           <a class="btn btn-gold" href="#contacto" data-pref="Medicina regenerativa">Pedir valoración <span class="ar">↗</span></a>
-          <a class="btn btn-ghost-inv" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20regenerativa%20en%20CIMED" target="_blank" rel="noopener" data-seo="Conversión · WhatsApp (sustituye provisionalmente a la reserva online)">Consultar por WhatsApp</a>
+          <a class="btn btn-ghost-inv" href="https://www.doctoralia.es/clinicas/cimed" target="_blank" rel="noopener noreferrer nofollow" data-seo="Conversión · reserva directa Doctoralia">Reservar cita online</a>
         </div>
         <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>médico responsable (pendiente)</b></span></div>
       </div>
@@ -643,7 +653,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <span class="eyebrow">Acompañamiento</span>
               <h3>Te acompañamos antes, durante y después.</h3>
               <p>La valoración médica es el punto de partida. Queremos que la experiencia sea clara, cercana y adaptada a ti.</p>
-              <a class="btn btn-gold" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20regenerativa%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp <span class="ar">↗</span></a>
+              <a class="btn btn-gold" href="https://www.doctoralia.es/clinicas/cimed" target="_blank" rel="noopener noreferrer nofollow">Reservar valoración <span class="ar">↗</span></a>
             </div>
             <div class="asteps">
               <div class="astep"><strong>01</strong><div><h3>Escuchamos tus objetivos</h3><p>Qué quieres mejorar en tu piel o tu cabello y qué has probado hasta ahora.</p></div></div>
@@ -702,7 +712,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <p>Depende del tratamiento, la zona y el número de sesiones. Tras la valoración recibes un presupuesto por escrito con el plan completo, sin compromiso.</p>
           <div class="cta-band">
             <h3>Descubre si la medicina regenerativa es para ti</h3>
-            <div class="hero-cta"><a class="btn btn-dark" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20regenerativa%20en%20CIMED" target="_blank" rel="noopener">Consultar por WhatsApp <span class="ar">↗</span></a></div>
+            <div class="hero-cta"><a class="btn btn-dark" href="https://www.doctoralia.es/clinicas/cimed" target="_blank" rel="noopener noreferrer nofollow">Reservar cita online <span class="ar">↗</span></a></div>
           </div>
         </div>
 
@@ -737,9 +747,9 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div>
       <span class="eyebrow">Contacto</span>
       <h2 style="margin-top:18px" data-seo="H2 · CTA principal · evento de conversión">Solicita tu valoración médica</h2>
-      <p class="lead">Escríbenos por WhatsApp o llama al centro y te orientamos sobre tu valoración.</p>
+      <p class="lead">Reserva directamente en nuestra agenda online o escríbenos por WhatsApp y te orientamos sobre tu valoración.</p>
       <div class="channels">
-        <!-- Reserva online (Doctoralia) retirada provisionalmente: WhatsApp es el canal de contacto. -->
+        <a class="channel book" href="https://www.doctoralia.es/clinicas/cimed" target="_blank" rel="noopener noreferrer nofollow"><div><b>Reservar cita online</b><small>Agenda médica de CIMED en Doctoralia</small></div><span>↗</span></a>
         <a class="channel" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20medicina%20regenerativa%20en%20CIMED" target="_blank" rel="noopener"><div><b>WhatsApp</b><small>Mensaje editable antes de enviar</small></div><span>↗</span></a>
         <div class="channel"><div><b><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a></b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
         <div class="channel"><div><b>info@institucioncimed.com</b><small>Correo del centro · pendiente de validación</small></div><button class="copy" type="button" data-copy="info@institucioncimed.com">Copiar</button></div>
@@ -787,7 +797,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
       <div><h4>URL y metadatos</h4>
         <p><code>/medicina-regenerativa-rubi/</code></p>
         <p><code>title</code>: Medicina regenerativa en Rubí | Plasma rico en plaquetas (PRP) | CIMED</p>
-        <p><code>meta description</code>: PRP facial y capilar, bioestimuladores y revitalización de la piel en Rubí con valoración médica. (Reserva online retirada provisionalmente; contacto por WhatsApp.)</p></div>
+        <p><code>meta description</code>: PRP facial y capilar, bioestimuladores y revitalización de la piel en Rubí con valoración médica. Reserva online.</p></div>
       <div><h4>Palabras clave</h4>
         <ul><li>Principal: medicina regenerativa Rubí</li><li>Volumen alto: plasma rico en plaquetas Rubí / Sant Cugat / Terrassa, PRP capilar, PRP facial</li><li>Secundarias: bioestimuladores de colágeno, tratamiento caída del pelo Rubí, revitalización facial</li><li>Long tail: qué es el PRP, es seguro, cuándo se ven resultados, precio</li></ul></div>
       <div><h4>Técnico y legal</h4>

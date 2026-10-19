@@ -302,6 +302,11 @@ img { display: block; }
 .channel small { color: var(--inv-suave); font-size: var(--small); }
 .channel .copy { background: rgba(255,255,255,.08); color: var(--champan-claro); }
 .channel > span { color: var(--champan); font-size: 1.25rem; }
+.channel.book { background: var(--champan); border-color: var(--champan); }
+.channel.book b { color: var(--petroleo); }
+.channel.book small { color: rgba(13,44,53,.72); }
+.channel.book > span { color: var(--petroleo); }
+.channel.book:hover { background: var(--champan-claro); }
 form { background: var(--blanco); color: var(--texto); border-radius: var(--r); padding: clamp(24px, 4vw, 44px); display: grid; gap: 18px; }
 form h3 { font-size: var(--d-m); }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -431,6 +436,16 @@ footer a:hover { color: var(--champan); }
 .area ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: .9375rem; color: var(--texto); }
 .area li::marker { color: var(--champan); }
 @media (max-width: 900px) { .areas3 { grid-template-columns: 1fr; } }
+/* Tarjetas de tratamiento enlazadas: toda la superficie es el enlace */
+.areas4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) { .areas4 { grid-template-columns: 1fr; } }
+a.area { text-decoration: none; color: inherit; transition: translate .35s var(--ease), box-shadow .35s var(--ease); }
+a.area:hover { translate: 0 -4px; box-shadow: 0 30px 50px -36px rgba(13,44,53,.5); }
+a.area .go { justify-self: end; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--petroleo); color: var(--champan-claro); transition: transform .35s var(--ease); }
+a.area:first-child .go { background: var(--champan); color: var(--petroleo); }
+a.area:hover .go { transform: rotate(-45deg); }
+.proc article { position: relative; }
+.proc .link::after { content: ""; position: absolute; inset: 0; }
 
 /* Blog article */
 .post-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 28px; font-size: .875rem; color: var(--inv-suave); }
@@ -843,13 +858,21 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
 
         <div class="block" id="m-areas">
           <h2 data-seo="H2 · clúster: facial / corporal / tecnología">Tratamientos de medicina estética</h2>
-          <div class="areas3">
-            <div class="area rise">
+          <div class="areas3 areas4">
+            <a class="area rise" href="medicina-estetica-rubi/facial/">
               <span class="k">Facial</span>
               <h3 data-seo="H3 · medicina estética facial Rubí">Medicina estética facial</h3>
               <p>Para la calidad de la piel, la expresión y los signos del paso del tiempo.</p>
               <ul><li>Calidad y luminosidad de la piel</li><li>Arrugas de expresión</li><li>Volumen y firmeza</li></ul>
-            </div>
+              <span class="go" aria-hidden="true">↗</span>
+            </a>
+            <a class="area rise" href="medicina-regenerativa-rubi/">
+              <span class="k">Regenerativa</span>
+              <h3 data-seo="H3 · medicina regenerativa Rubí">Medicina regenerativa</h3>
+              <p>Tratamientos que estimulan la capacidad natural de tu piel para renovarse, a partir de tu propio plasma o de bioestimuladores.</p>
+              <ul><li>Calidad de la piel</li><li>Firmeza</li><li>Cabello</li></ul>
+              <span class="go" aria-hidden="true">↗</span>
+            </a>
             <div class="area rise">
               <span class="k">Corporal</span>
               <h3 data-seo="H3 · medicina estética corporal Rubí">Medicina estética corporal</h3>
@@ -863,7 +886,6 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <ul><li>Listado de equipos pendiente de confirmar</li></ul>
             </div>
           </div>
-          <p><a href="medicina-estetica-rubi/facial/" style="font-weight:600;color:var(--petroleo)">Ver medicina estética facial →</a> &nbsp;·&nbsp; <a href="medicina-regenerativa-rubi/" style="font-weight:600;color:var(--petroleo)">Ver medicina regenerativa →</a></p>
           <p class="muted" style="font-size:var(--small)">Cada tratamiento tendrá su propia página cuando la dirección médica confirme el listado. Los resultados varían en cada paciente.</p>
         </div>
 
@@ -998,10 +1020,12 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
     <div>
       <span class="eyebrow">Contacto</span>
       <h2 style="margin-top:18px" data-seo="H2 · CTA principal · evento de conversión">Solicita tu valoración médica</h2>
-      <p class="lead">Escríbenos por WhatsApp o llama al centro y te orientamos sobre tu valoración.</p>
+      <p class="lead">Reserva directamente en nuestra agenda online o escríbenos por WhatsApp y te orientamos sobre tu valoración.</p>
       <div class="channels">
+        <a class="channel book" href="https://www.doctoralia.es/clinicas/cimed" target="_blank" rel="noopener noreferrer nofollow"><div><b>Reservar cita online</b><small>Agenda médica de CIMED en Doctoralia</small></div><span>↗</span></a>
         <a class="channel" href="https://wa.me/34670682777?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20CIMED" target="_blank" rel="noopener"><div><b>WhatsApp</b><small>Mensaje editable antes de enviar</small></div><span>↗</span></a>
         <div class="channel"><div><b><a class="tel" href="tel:+34670682777">+34 670 68 27 77</a></b><small>Teléfono del centro</small></div><button class="copy" type="button" data-copy="+34 670 68 27 77">Copiar</button></div>
+        <div class="channel"><div><b>info@institucioncimed.com</b><small>Correo del centro · pendiente de validación</small></div><button class="copy" type="button" data-copy="info@institucioncimed.com">Copiar</button></div>
       </div>
     </div>
     <form id="form" novalidate aria-labelledby="ftitle">

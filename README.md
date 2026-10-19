@@ -1,4 +1,4 @@
-# CIMED WEB — V2 pruebas
+# CIMED WEB — V2.1 pruebas
 
 Proyecto independiente de Café Aurora.
 
@@ -27,8 +27,9 @@ URL de pruebas: https://jmarbot.github.io/cimed-web/
 - Formularios desactivados: no envían, no recogen ni almacenan datos, y muestran un aviso visible.
 - Botón «Capa SEO» oculto. Para revisarlo en desarrollo, añadir `?capa-seo` a la URL.
 - Enlaces legales (privacidad, cookies, aviso legal) marcados como no operativos (`aria-disabled`).
-- Contacto: WhatsApp y teléfono (+34 670 68 27 77), con enlace `tel:`.
-- Medicina regenerativa: los botones de reserva en Doctoralia se sustituyeron provisionalmente por WhatsApp.
+- Bloque de contacto (diseño original): «Reservar cita online» (enlace directo a https://www.doctoralia.es/clinicas/cimed, pestaña nueva, `rel="noopener noreferrer nofollow"`; sin script de widget), WhatsApp, teléfono con enlace `tel:` y correo marcado como pendiente de validación.
+- Medicina regenerativa conserva además sus botones originales de reserva en Doctoralia.
+- Tarjetas de tratamiento enlazadas en toda su superficie: cirugía facial, mamaria y corporal, medicina estética facial y medicina regenerativa. Medicina estética corporal y Tecnología validada son tarjetas informativas (sin enlace).
 - Datos estructurados apuntando al dominio de pruebas `https://jmarbot.github.io/cimed-web/`.
 
 ## Antes de publicar en el dominio definitivo (centrosmc.com)
@@ -38,8 +39,8 @@ Requiere autorización explícita del usuario.
 - [ ] Conectar los formularios a un canal seguro aprobado y revisado legalmente, retirar el aviso «Formulario no operativo» y quitar los `disabled`.
 - [ ] Incorporar las páginas legales definitivas y quitar `aria-disabled` de sus enlaces.
 - [ ] Decidir si la capa SEO se elimina del HTML de producción.
-- [ ] Validar dirección (Carrer d’Antoni de Borja, 15, 08191 Rubí) y correo (info@institucioncimed.com), que solo aparecen en medicina regenerativa y están marcados como pendientes.
-- [ ] Decidir si se recupera la reserva online (Doctoralia) con un enlace confirmado por el centro.
+- [ ] Validar dirección (Carrer d’Antoni de Borja, 15, 08191 Rubí; solo en medicina regenerativa) y correo (info@institucioncimed.com; bloque de contacto de las 6 páginas), marcados como pendientes.
+- [ ] Decidir si se integra el widget de Doctoralia (ahora solo hay enlace directo).
 - [ ] Revisión médica de todas las páginas: nombre del revisor y fecha real de revisión (se retiraron las fechas provisionales).
 - [ ] Confirmar el listado de intervenciones y tratamientos marcados «Pendiente de confirmar».
 - [ ] Validar afirmaciones clínicas, legales y comerciales (presupuesto cerrado, seguimiento hasta el alta, regulación AEMPS del PRP, seguridad, contraindicaciones, normativa de publicidad sanitaria).
@@ -47,3 +48,11 @@ Requiere autorización explícita del usuario.
 - [ ] Revisar textos provisionales de la portada: horario, perfiles médicos y nº de colegiado, fotografías, reseñas, especialidades y equipos, autor y fecha del blog, chip «Citas esta semana».
 - [ ] Añadir favicon cuando el centro facilite el logotipo.
 - [ ] Probar navegación, botones, móvil y accesibilidad en la URL de pruebas.
+
+## Espacios reservados para fotografías reales
+No se han añadido imágenes. Marcadores existentes (`.ph` / `.art`):
+- Portada · Inicio: cabecera (consulta y equipo, 2).
+- Portada · Equipo médico: 4 retratos (cirujano, médico estético, especialista, coordinación de pacientes).
+- Portada · Cirugía estética: cabecera (quirófano o consulta), 3 tarjetas (facial, mamaria, corporal) y «Tu cirujano».
+- Portada · Medicina estética: cabecera (cabina de tratamiento).
+- Subpáginas: cabecera de cirugía facial, mamaria y corporal, medicina estética facial y medicina regenerativa (5).
