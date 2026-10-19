@@ -168,6 +168,9 @@ img { display: block; }
 .ph.light { background: linear-gradient(165deg, var(--gris), var(--gris-2)); }
 .ph.light::before { background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(13,44,53,.03) 22px 23px); }
 .ph.light span { color: var(--petroleo); background: rgba(255,255,255,.7); }
+/* Fotografías en los espacios .ph: la imagen cubre el marco sin deformarse */
+.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph:has(> img)::before { content: none; }
 .hero-media .ph:first-child { aspect-ratio: 4 / 5; grid-row: span 2; }
 .hero-media .ph:nth-child(2) { aspect-ratio: 1; }
 .chip-card { border-radius: var(--r); background: rgba(255,255,255,.06); border: 1px solid rgba(238,242,242,.12); padding: 18px; display: grid; gap: 6px; align-content: end; backdrop-filter: blur(10px); }
@@ -535,8 +538,8 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           </div>
         </div>
         <div class="hero-media">
-          <div class="ph"><span>Foto real · consulta</span></div>
-          <div class="ph"><span>Foto real · equipo</span></div>
+          <div class="ph"><img src="img/consulta-720.webp" srcset="img/consulta-440.webp 440w, img/consulta-720.webp 720w" sizes="(max-width: 900px) 55vw, 420px" width="720" height="1281" alt="Consulta médica en el centro CIMED de Rubí" fetchpriority="high" decoding="async" style="object-position: 50% 62%"></div>
+          <div class="ph"><img src="img/equipo-quirurgico-960.webp" srcset="img/equipo-quirurgico-560.webp 560w, img/equipo-quirurgico-960.webp 960w" sizes="(max-width: 900px) 45vw, 320px" width="960" height="704" alt="Equipo quirúrgico de CIMED en el quirófano" fetchpriority="high" decoding="async" style="object-position: 50% 50%"></div>
           <div class="chip-card"><span class="dot-live">Citas esta semana</span><b>Valoración personalizada</b><small>Con un médico del equipo</small></div>
         </div>
       </div>
@@ -625,9 +628,9 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
       </div>
       <div class="team">
         <div class="doc rise"><div class="ph light"><span>Foto real autorizada</span></div><div class="meta"><b>Nombre del cirujano</b><span>Cirugía plástica, estética y reparadora</span><em>Nº colegiado pendiente</em></div></div>
-        <div class="doc rise"><div class="ph light"><span>Foto real autorizada</span></div><div class="meta"><b>Nombre del médico</b><span>Medicina estética</span><em>Nº colegiado pendiente</em></div></div>
-        <div class="doc rise"><div class="ph light"><span>Foto real autorizada</span></div><div class="meta"><b>Nombre del médico</b><span>Especialidad confirmada</span><em>Nº colegiado pendiente</em></div></div>
-        <div class="doc rise"><div class="ph light"><span>Foto real autorizada</span></div><div class="meta"><b>Coordinación de pacientes</b><span>Atención y seguimiento</span><em>Contacto directo</em></div></div>
+        <div class="doc rise"><div class="ph light"><img src="img/dra-montserrat-garrote-640.webp" srcset="img/dra-montserrat-garrote-400.webp 400w, img/dra-montserrat-garrote-640.webp 640w" sizes="(max-width: 900px) 50vw, 300px" width="640" height="1122" alt="Retrato de la Dra. Montserrat Garrote Muñoz" loading="lazy" decoding="async" style="object-position: 50% 32%"></div><div class="meta"><b>Dra. Montserrat Garrote Muñoz</b><span>Medicina estética · Directora médica</span><em>Nº colegiado pendiente</em></div></div>
+        <div class="doc rise"><div class="ph light"><img src="img/dr-humberto-loscertales-349.webp" width="349" height="521" alt="Retrato del Dr. Humberto Loscertales Guardiola" loading="lazy" decoding="async" style="object-position: 50% 25%"></div><div class="meta"><b>Dr. Humberto Loscertales Guardiola</b><span>Medicina general y hematología</span><em>Nº colegiado pendiente</em></div></div>
+        <div class="doc rise"><div class="ph light"><img src="img/maria-casanova-640.webp" srcset="img/maria-casanova-400.webp 400w, img/maria-casanova-640.webp 640w" sizes="(max-width: 900px) 50vw, 300px" width="640" height="1123" alt="Retrato de María Casanova Álvaro" loading="lazy" decoding="async" style="object-position: 50% 32%"></div><div class="meta"><b>María Casanova Álvaro</b><span>Fisioterapeuta · Jefa de personal</span><em>Nº colegiado pendiente</em></div></div>
       </div>
     </div>
   </section>
@@ -703,7 +706,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
         </div>
         <div class="reviewed" data-seo="E-E-A-T · revisión médica + fecha (YMYL)"><span class="av"></span><span>Contenido revisado por <b>cirujano responsable (pendiente)</b></span></div>
       </div>
-      <div class="ph"><span>Foto real · quirófano o consulta</span></div>
+      <div class="ph"><img src="img/quirofano-detalle-1200.webp" srcset="img/quirofano-detalle-720.webp 720w, img/quirofano-detalle-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 520px" width="1200" height="800" alt="Cirujanos de CIMED durante una intervención en el quirófano" loading="lazy" decoding="async" style="object-position: 55% 50%"></div>
     </div>
   </section>
 
@@ -734,7 +737,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
           <h2 data-seo="H2 · clúster: facial / mamaria / corporal">Intervenciones de cirugía estética</h2>
           <div class="proc">
             <article class="rise">
-              <div class="ph light"><span>Foto real autorizada</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-facial-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía facial; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 30%"><span>Imagen ilustrativa</span></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía facial Rubí">Cirugía facial</h3>
                 <p>Intervenciones sobre rostro y cuello para armonizar rasgos o tratar signos de envejecimiento.</p>
@@ -743,7 +746,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <a class="link" href="cirugia-estetica-rubi/cirugia-facial/">Ver cirugía facial <span>→</span></a>
             </article>
             <article class="rise">
-              <div class="ph light"><span>Foto real autorizada</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-mamaria-548.webp" width="548" height="677" alt="Imagen ilustrativa de cirugía mamaria; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 35%"><span>Imagen ilustrativa</span></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía mamaria Rubí">Cirugía mamaria</h3>
                 <p>Intervenciones para modificar el volumen, la forma o la posición del pecho.</p>
@@ -752,7 +755,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
               <a class="link" href="cirugia-estetica-rubi/cirugia-mamaria/">Ver cirugía mamaria <span>→</span></a>
             </article>
             <article class="rise">
-              <div class="ph light"><span>Foto real autorizada</span></div>
+              <div class="ph light"><img src="img/ilustracion-cirugia-corporal-552.webp" width="552" height="677" alt="Imagen ilustrativa de cirugía corporal; no corresponde a una intervención real" loading="lazy" decoding="async" style="object-position: 50% 55%"><span>Imagen ilustrativa</span></div>
               <div class="body">
                 <h3 data-seo="H3 · cirugía corporal Rubí">Cirugía corporal</h3>
                 <p>Intervenciones para remodelar el contorno del cuerpo cuando la dieta y el ejercicio no bastan.</p>
@@ -783,7 +786,7 @@ body.seo [data-seo]::after { content: attr(data-seo); position: absolute; top: -
         <div class="block" id="c-cirujano">
           <h2 data-seo="H2 · autoría · Physician schema">Tu cirujano</h2>
           <div class="surgeon stage">
-            <div class="ph"><span>Foto real autorizada</span></div>
+            <div class="ph"><img src="img/quirofano-escena-900.webp" srcset="img/quirofano-escena-560.webp 560w, img/quirofano-escena-900.webp 900w" sizes="(max-width: 640px) 100vw, 220px" width="900" height="600" alt="Equipo de cirugía de CIMED en el quirófano" loading="lazy" decoding="async" style="object-position: 45% 40%"></div>
             <div>
               <h3>Nombre del cirujano</h3>
               <p>Especialista en cirugía plástica, estética y reparadora. Aquí irá su trayectoria, formación y experiencia, redactada y aprobada por él.</p>

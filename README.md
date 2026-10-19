@@ -1,4 +1,4 @@
-# CIMED WEB — V2.1 pruebas
+# CIMED WEB — V2.2 pruebas
 
 Proyecto independiente de Café Aurora.
 
@@ -49,10 +49,17 @@ Requiere autorización explícita del usuario.
 - [ ] Añadir favicon cuando el centro facilite el logotipo.
 - [ ] Probar navegación, botones, móvil y accesibilidad en la URL de pruebas.
 
-## Espacios reservados para fotografías reales
-No se han añadido imágenes. Marcadores existentes (`.ph` / `.art`):
-- Portada · Inicio: cabecera (consulta y equipo, 2).
-- Portada · Equipo médico: 4 retratos (cirujano, médico estético, especialista, coordinación de pacientes).
-- Portada · Cirugía estética: cabecera (quirófano o consulta), 3 tarjetas (facial, mamaria, corporal) y «Tu cirujano».
-- Portada · Medicina estética: cabecera (cabina de tratamiento).
-- Subpáginas: cabecera de cirugía facial, mamaria y corporal, medicina estética facial y medicina regenerativa (5).
+## Fotografías (V2.2)
+Origen: `CIMED_V2_2_Paquete_Fotografico` (fuera del repositorio). Optimizadas a WebP en `img/` (varios anchos con `srcset`, carga diferida fuera de la cabecera, metadatos eliminados al recodificar). Consentimientos, nombres y cargos confirmados por el usuario.
+
+| Sección | Imagen | Tipo |
+|---|---|---|
+| Portada · Inicio | `consulta`, `equipo-quirurgico` | Reales |
+| Portada · Equipo médico | `dra-montserrat-garrote`, `dr-humberto-loscertales`, `maria-casanova` | Reales (retratos) |
+| Portada · Cirugía estética (cabecera) | `quirofano-detalle` | Real |
+| Portada · «Tu cirujano» | `quirofano-escena` | Real |
+| Portada · tarjetas facial/mamaria/corporal y cabecera de sus subpáginas | `ilustracion-cirugia-*` | **Generadas**: aviso visible «Imagen ilustrativa» y `alt` que indica que no es una intervención real |
+
+No publicadas: `dr-carlos-jimenez-cano-provisional` (fotograma con subtítulos) y `coordinacion-consulta-real` (señales de imagen generada/editada).
+
+Espacios que siguen pendientes de foto: ficha del cirujano (Equipo médico), cabecera de Medicina estética, cabeceras de medicina estética facial y medicina regenerativa.
