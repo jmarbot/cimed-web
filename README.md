@@ -1,4 +1,4 @@
-# CIMED WEB — V2.2 pruebas
+# CIMED WEB — V2.3 pruebas
 
 Proyecto independiente de Café Aurora.
 
@@ -63,3 +63,11 @@ Origen: `CIMED_V2_2_Paquete_Fotografico` (fuera del repositorio). Optimizadas a 
 No publicadas: `dr-carlos-jimenez-cano-provisional` (fotograma con subtítulos) y `coordinacion-consulta-real` (señales de imagen generada/editada).
 
 Espacios que siguen pendientes de foto: ficha del cirujano (Equipo médico), cabecera de Medicina estética, cabeceras de medicina estética facial y medicina regenerativa.
+
+## Cambios V2.3
+- Cabecera de Cirugía estética: `ilustracion-cirugia-cabecera` (generada), con aviso «Imagen ilustrativa».
+- «Tu cirujano» y ficha del equipo: retrato `dr-carlos-jimenez-cano` (Dr. Carlos Jiménez Cano · Cirugía general · Cirugía plástica).
+- Fichas del equipo sin número de colegiado (decisión de dirección, pendiente de comprobación normativa).
+- Cabecera de Medicina estética: `instalaciones-pasillo` (pasillo y sala de tratamiento).
+- Ya no se muestran `quirofano-detalle` ni `quirofano-escena` (se conservan en `img/`).
+- **Pendiente de publicación:** foto de la sala de quirófano (`Cimed-Web/pendientes-publicacion/quirofano-sala-505.webp`, fuera del repositorio) hasta confirmar procedencia y autorización.
