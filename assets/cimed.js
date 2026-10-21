@@ -148,13 +148,13 @@
     });
 
     // Pista horizontal de especialidades
-    var pin = $(".spec-pin"), track = $(".spec-track");
-    if (pin && track) {
+    var pin = $(".spec-pin"), specTrack = $(".spec-track");
+    if (pin && specTrack) {
       var mm = gsap.matchMedia();
       mm.add("(min-width: 900px)", function () {
         pin.classList.add("is-pinned");
-        var dist = function () { return Math.max(0, track.scrollWidth - pin.clientWidth); };
-        gsap.to(track, { x: function () { return -dist(); }, ease: "none",
+        var dist = function () { return Math.max(0, specTrack.scrollWidth - pin.clientWidth); };
+        gsap.to(specTrack, { x: function () { return -dist(); }, ease: "none",
           scrollTrigger: { trigger: pin, start: "top top+=90", end: function () { return "+=" + dist(); }, scrub: 0.8, pin: true, invalidateOnRefresh: true, anticipatePin: 1 } });
       });
     }
