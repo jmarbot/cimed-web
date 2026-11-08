@@ -107,7 +107,7 @@ ul { margin: 0; padding: 0; }
 .btn svg { width: 18px; height: 18px; flex: none; }
 .btn-ghost { --b: transparent; --c: var(--ink); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--ink); }
-.dark .btn-ghost, .on-dark .btn-ghost, .hero .btn-ghost, .page-hero .btn-ghost, .adp .btn-ghost, .site-foot .btn-ghost { --c: var(--on-dark); border-color: rgba(232,239,238,.3); }
+.dark .btn-ghost, .on-dark .btn-ghost, .hero .btn-ghost, .page-hero .btn-ghost, .adp .btn-ghost, .site-foot .btn-ghost, .drawer .btn-ghost { --c: var(--on-dark); border-color: rgba(232,239,238,.3); }
 .dark .btn-ghost:hover, .on-dark .btn-ghost:hover, .hero .btn-ghost:hover, .page-hero .btn-ghost:hover { border-color: var(--gold); }
 .btn-petrol { --b: var(--petrol); --c: var(--on-dark); }
 .link-arrow { display: inline-flex; gap: .5rem; align-items: center; font-weight: 500; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
@@ -527,6 +527,11 @@ ul { margin: 0; padding: 0; }
 .legal p, .legal li { color: var(--muted); }
 .legal p + p { margin-top: .9rem; }
 .legal ul { padding-left: 1.2rem; display: grid; gap: .4rem; margin-top: .6rem; }
+.legal ul + p, .legal .table-wrap + p { margin-top: .9rem; }
+.legal .table-wrap { overflow-x: auto; margin-top: 1rem; }
+.legal table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.legal th, .legal td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); }
+.legal th { color: var(--ink); font-weight: 500; }
 .fill { background: rgba(184,154,99,.18); padding: 0 .3em; border-radius: 2px; color: var(--ink); font-family: var(--f-data); font-size: .85em; }
 
 /* Dos columnas genéricas */
@@ -669,3 +674,16 @@ ul { margin: 0; padding: 0; }
 .case { margin: 0 0 1.4rem; }
 .case figcaption { font-size: .85rem; color: var(--muted); margin-top: .6rem; }
 .t-sec .compare { max-width: 720px; }
+
+/* Fotos reales dentro del marco de los espacios reservados */
+.ph.has-img { background: var(--porcelain); }
+.ph.has-img::before { display: none; }
+.ph.has-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph.has-img .ph-tag { z-index: 1; }
+
+/* "También realizamos": otros tratamientos, solo nombres */
+.also { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.also-list { list-style: none; padding: 0; margin: 1rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.also-list a { display: inline-block; padding: .45rem .9rem; border: 1px solid var(--line); border-radius: 999px; font-size: .9rem; color: var(--ink); text-decoration: none; transition: border-color .2s, color .2s; }
+.also-list a:hover, .also-list a:focus-visible { border-color: var(--gold); color: var(--gold-ink); }
+.also-note { margin-top: .9rem; font-size: .85rem; color: var(--muted); }

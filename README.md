@@ -1,10 +1,10 @@
-# CIMED · Institución médica en Rubí — entorno de pruebas
+# CIMED · Institución médica en Rubí
 
-Borrador de la nueva web de CIMED publicado en GitHub Pages:
-https://jmarbot.github.io/cimed-web/
+Web de CIMED publicada con GitHub Pages.
 
-- Web estática (HTML + `assets/cimed.css` + `assets/cimed.js`), rutas relativas. La guía de tratamientos se retiró en esta versión.
-- Todas las páginas llevan `noindex, nofollow` (entorno de pruebas).
-- `404.html` fija su `<base>` en GitHub Pages para cargar los recursos desde cualquier ruta.
-- La versión anterior (V2.5) se conserva en la rama `backup/v2.5-pre-borrador-2026-10-21`.
-- La versión anterior del borrador se conserva en la rama `backup/v3-borrador-pre-actualizacion-2026-10-21`.
+- Web de pruebas: https://jmarbot.github.io/cimed-web/
+- Dominio definitivo previsto: https://www.centrosmc.com (todavía sin conectar: el archivo `CNAME` se añadirá al conectar el dominio).
+- Web estática: páginas HTML, `assets/` (CSS, JavaScript, tipografías, librerías y fotos), `robots.txt` y `sitemap.xml`.
+- Las carpetas con nombre de las URL de la web anterior (por ejemplo `blefaroplastia/`) redirigen al instante a la página nueva equivalente.
+- `.gitignore` excluye los archivos privados: fotos originales, copias de seguridad, `.zip`, `.heic` y `.htaccess`.
+- La versión anterior (V3.1) se conserva en la rama `backup/v3.1-pre-publicacion-2026-11-08`.

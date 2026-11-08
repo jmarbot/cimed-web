@@ -25,11 +25,39 @@
     var t = e.target.closest("[data-track]");
     if (t) track(t.getAttribute("data-track"), { label: t.getAttribute("data-track-label") || t.textContent.trim().slice(0, 60) });
   });
+  /* Google Analytics 4: solo se carga si existe <meta name="cimed-ga"> y el usuario ha aceptado. */
+  function loadAnalytics() {
+    var m = $('meta[name="cimed-ga"]');
+    if (!m || !m.content || window.__cimedGA || store.get("cimed-consent") !== "all") return;
+    window.__cimedGA = true;
+    var sc = document.createElement("script");
+    sc.async = true; sc.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(m.content);
+    document.head.appendChild(sc);
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", m.content, { anonymize_ip: true });
+  }
+  loadAnalytics();
   var cookies = $(".cookies");
   if (cookies) {
     if (!store.get("cimed-consent")) cookies.hidden = false;
     $$("[data-consent]", cookies).forEach(function (b) {
-      b.addEventListener("click", function () { store.set("cimed-consent", b.getAttribute("data-consent")); cookies.hidden = true; });
+      b.addEventListener("click", function () {
+        var prev = store.get("cimed-consent"), val = b.getAttribute("data-consent");
+        store.set("cimed-consent", val); cookies.hidden = true;
+        if (val === "all") loadAnalytics();
+        else if (prev === "all" && window.__cimedGA) {
+          /* Retirada del consentimiento: borrar cookies de Analytics y recargar sin ellas. */
+          document.cookie.split(";").forEach(function (c) {
+            var n = c.split("=")[0].trim();
+            if (/^_ga/.test(n)) {
+              document.cookie = n + "=; Max-Age=0; path=/; domain=." + location.hostname.replace(/^www\./, "");
+              document.cookie = n + "=; Max-Age=0; path=/";
+            }
+          });
+          location.reload();
+        }
+      });
     });
   }
   $$("[data-open-cookies]").forEach(function (b) { b.addEventListener("click", function (e) { e.preventDefault(); if (cookies) cookies.hidden = false; }); });
